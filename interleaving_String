@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+
+class Solution {
+    public boolean isInterleave(String s1, String s2, String s3) {
+        char[] c1=s1.toCharArray();
+        char[] c2=s2.toCharArray();
+        char[] res=new char[c1.length+c2.length];
+        int j=0;for(int i=0; i<c1.length; i++){
+            res[j]=c1[i];
+            j++;
+        }
+        for(int i=0; i<c2.length; i++){
+            res[j]=c1[i];
+            j++;
+        }
+        Arrays.sort(res);
+        String result="";
+        for(int i=0; i<res.length; i++){
+            result+=res[i];
+        }
+        if(result.equals(s3)) return true;
+        else return false;
+        
+        
+        
+        
+        
+        
+
+        
+    }
+}

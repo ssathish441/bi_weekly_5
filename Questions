@@ -1,0 +1,80 @@
+1.Given three strings s1, s2, and s3, return true if s3 is formed by interleaving s1 and s2; otherwise, return false.
+Interleaving means splitting s1 and s2 into substrings:
+
+s1 = s1_1 + s1_2 + ... + s1_n
+s2 = s2_1 + s2_2 + ... + s2_m
+such that:
+
+|n - m| <= 1
+The concatenation is alternating, starting from either string:
+s1_1 + s2_1 + s1_2 + s2_2 + ... or
+s2_1 + s1_1 + s2_2 + s1_2 + ...
+Examples
+Example 1
+Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
+Output: true
+Example 2
+Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
+Output: false
+Example 3
+Input: s1 = "", s2 = "", s3 = ""
+Output: true
+Constraints
+0 <= s1.length, s2.length <= 100
+0 <= s3.length <= 200
+s1, s2, and s3 contain lowercase English letters.
+Follow-up
+Could you solve it using only O(s2.length) additional space?
+2.Given an integer array nums sorted in non-decreasing order, remove duplicates in-place such that each unique element appears at most twice.
+
+The relative order of elements must be preserved. Since the operation must be in-place, the resulting array is stored in the first part of nums.
+
+Return k, the number of elements after removing extra duplicates.
+
+Requirements
+Modify nums in-place.
+Use only O(1) extra space.
+After processing, the first k elements of nums should contain the valid result.
+Elements beyond index k - 1 are not important.
+Example 1
+Input: nums = [1,1,1,2,2,3]
+Output: 5, nums = [1,1,2,2,3,_]
+Example 2
+Input: nums = [0,0,1,1,1,1,2,3,3]
+Output: 7, nums = [0,0,1,1,2,3,3,_,_]
+Constraints
+1 <= nums.length <= 3 * 10^4
+-10^4 <= nums[i] <= 10^4
+nums is sorted in non-decreasing order.
+3.Given a square matrix, calculate the absolute difference between the sums of its primary and secondary diagonals.
+
+Primary diagonal
+Elements where row index and column index are the same: arr[0][0], arr[1][1], ..., arr[n-1][n-1].
+
+Secondary diagonal
+Elements where row + column = n - 1: arr[0][n-1], arr[1][n-2], ..., arr[n-1][0].
+
+Task
+Return: |(sum of primary diagonal) - (sum of secondary diagonal)|.
+
+Function Signature
+int diagonalDifference(List> arr)
+Input Format
+First line contains an integer n (size of the square matrix).
+Next n lines each contain n space-separated integers.
+Output Format
+A single integer: the absolute diagonal difference.
+
+Example
+Input:
+3
+11 2 4
+4 5 6
+10 8 -12
+
+Output:
+15
+Explanation
+Primary diagonal sum = 11 + 5 + (-12) = 4
+Secondary diagonal sum = 4 + 5 + 10 = 19
+Absolute difference = |4 - 19| = 15
